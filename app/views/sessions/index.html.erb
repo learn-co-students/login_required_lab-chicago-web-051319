@@ -1,7 +1,12 @@
-<h1>Session Index page</h1>
-<h1>Hi, <%= session[:name] %>!</h1>
+<body style="background-color:lightblue;">
+<h1 style="text-align:center;">Welcome to Unknown Webpage!</h1><hr>
+<h1 style="text-align:center;">Hi, <%= session[:name] %>!</h1>
+<h4 style="text-align:center;">
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <input type=submit value=logout>
 <% end %>
-
-<%= link_to "click here to get to know about your secret.", secrets_show_path %>
+</h4>
+<h4 style="text-align:right">
+<%= link_to "More Info about secret", secrets_show_path %>
+</h4>
+</body>
