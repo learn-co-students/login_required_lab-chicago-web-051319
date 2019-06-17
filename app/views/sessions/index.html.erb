@@ -1,0 +1,10 @@
+<% if session[:name] %>
+    <p>Hello <%= session[:name]%>!</p>
+<% end %>
+
+<p> Click here to <%= link_to("login", new_session_path)%></p>
+<p>If you are already logged in, view your secret message <%= link_to("here", secrets_show_path)%>
+<p> To log out, click below: </p>
+<%= form_tag({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+    <%= submit_tag("Logout")%>
+<%end%>
